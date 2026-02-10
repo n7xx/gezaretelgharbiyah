@@ -107,8 +107,6 @@ function App() {
   return (
     <>
       <RouterProvider router={routes} />
-
-      {/* comment any thing again */}
     </>
   );
 }
