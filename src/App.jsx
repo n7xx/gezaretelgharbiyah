@@ -1,16 +1,27 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LayOut from "./LayOut/LayOut";
-import Home from "./Home/Home";
-import Cart from "./Cart/Cart";
-import Products from "./Products/Products";
-import Login from "./Login/Login";
-import Register from "./Register/Register";
-import Categories from "./Categories/Categories";
-import About from "./About/About";
-import Contact from "./Contact/Contact";
-import NotFound from "./NotFound/NotFound";
+import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
+      
 
-import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes";
+import LayOut from "./Components/LayOut/LayOut";
+import Home from "./Components/Home/Home";
+import Cart from "./Components/Cart/Cart";
+import Products from "./Components/Products/Products";
+import Offers from "./Components/Offers/Offers";
+import About from "./Components/About/About";
+import ContactUs from "./Components/ContactUs/ContactUs";
+import NotFound from "./Components/NotFound/NotFound";
+
+/* Following are the components used in the Home page sections: */
+import HeroSection from "./Components/Home/HeroSection/HeroSection";
+import FeaturesSection from "./Components/Home/FeaturesSection/FeaturesSection";
+import OffersSection from "./Components/Home/OffersSection/OffersSection";
+import ProductsPreview from "./Components/Home/ProductsPreview/ProductsPreview";
+import DeliverySection from "./Components/Home/DeliverySection/DeliverySection";
+import CTASection from "./Components/Home/CtaSection/CtaSection";
+import TestimonialsSection from "./Components/Home/TestimonialsSection/TestimonialsSection";
+
+
+
+
 
 function App() {
   const routes = createBrowserRouter([
@@ -21,86 +32,61 @@ function App() {
         {
           index: true,
           element: (
-            <ProtectedRoutes>
+            
               <Home />
-            </ProtectedRoutes>
-          ),
-        },
-        {
-          path: "home",
-          element: (
-            <ProtectedRoutes>
-              <Home />
-            </ProtectedRoutes>
+          
           ),
         },
         {
           path: "cart",
           element: (
-            <ProtectedRoutes>
+            
               <Cart />
-            </ProtectedRoutes>
+          
           ),
         },
         {
           path: "products",
           element: (
-            <ProtectedRoutes>
+            
               <Products />
-            </ProtectedRoutes>
+          
           ),
         },
         {
-          path: "login",
+          path: "offers",
           element: (
-            <AuthView>
-              <Login />
-            </AuthView>
-          ),
-        },
-        {
-          path: "register",
-          element: (
-            <AuthView>
-              <Register />
-            </AuthView>
-          ),
-        },
-        {
-          path: "categories",
-          element: (
-            <ProtectedRoutes>
-              <Categories />
-            </ProtectedRoutes>
+            
+              <Offers />
+          
           ),
         },
         {
           path: "about",
           element: (
-            <ProtectedRoutes>
+            
               <About />
-            </ProtectedRoutes>
+          
           ),
         },
         {
-          path: "contact",
+          path: "contactUs",
           element: (
-            <ProtectedRoutes>
-              <Contact />
-            </ProtectedRoutes>
+            
+              <ContactUs />
+          
           ),
         },
 
         {
           path: "*",
           element: (
-            <ProtectedRoutes>
+            
               <NotFound />
-            </ProtectedRoutes>
+          
           ),
         },
 
-        // !Detalis Path
       ],
     },
   ]);
@@ -108,6 +94,8 @@ function App() {
     <>
       <RouterProvider router={routes} />
 
+
+  
       {/* git test  youssef elgendy test  */}
     </>
   );
